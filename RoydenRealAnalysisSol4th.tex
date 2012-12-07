@@ -38,7 +38,7 @@ Problem 1 - Section 2.1, page 31\\
 Prove that if $A$ and $B$ are two sets in $\mathcal{A}$ with $A \subseteq B$, then $m(A) \le m(B)$. This property is called \emph{monotonicity}.
 \\\\ \emph{Proof.}
 
-Let $B' = B \sim A$ so that $B = B' \cap A = \emptyset$ by the construction of the set $B'$. Since $A \subseteq B$ we have that $B = B' \cup A$. Because $A$ and $B'$ are disjoint we use the countable additivity of the measure and that $m(E) \ge 0$ for all $E$ to derive:
+Let $B' = B \sim A$ so that $B = B' \cap A = \emptyset$ by the construction of the set $B'$. Since $A \subseteq B$ we have that $B = B' \cup A$. Because $A$ and $B'$ are disjoint we use the countable additivity of the measure and that $m(E) \ge 0$ for all $E$ (because we are given that $m: \mathcal{A} \to [0,\infty]$)to derive:
 \begin{eqnarray*}
 m(B) &=& m(A \cup B') = m(A) + m(B') \\
         &&\hspace{53px}\ge m(A)
@@ -59,11 +59,61 @@ m(A) = m(A \cup \emptyset) = m(A) + m(\emptyset) \implies m(\emptyset) = 0
 
 
 \begin{flushleft} 
-Problem 2 - Section 2.1, page 31\\
+Problem 3 - Section 2.1, page 31\\
 \rule{500pt}{1pt}\\
 \end{flushleft} 
 
 Let $\{ E_k \}^\infty_{k = 1}$ be a countable collection of sets in $\mathcal{A}$. Prove that $m(\cup^\infty_{k=1} E_k) \le \sum^\infty_{k = 1} m(E_k)$
 \\\\ \emph{Proof.}
+
+First we show  $m(\cup^n_{k=1} E_k) \le \sum^n_{k = 1} m(E_k)$ by induction.\\
+Let $n = 2$ so that we first want to show $m(A \cup B) \le m(A) + m(B)$. Let $O = A \cap B$ and let $A' = A \sim O$ and $B' = B \sim O$. It is clear from construction that we have
+\begin{align}
+&A \cup B = A' \cup O \cup B' \label{unionbreak} \\
+&A = A' \cup O \hspace{15px} \text{and} \hspace{15px} B = B' \cup O \label{intersum} \\
+&(A' \cap O) \cap B' = \emptyset \label{uniondisjoint} \\
+&A' \subset A \hspace{15px} \text{and} \hspace{15px} B' \subset B \label{partsubs}
+\end{align}
+
+\noindent We may use the countable additivity of $m$ to derive:
+\begin{eqnarray*}
+m(A \cup B) = m(A' \cup O \cup B') &=& m(A' \cup O) + m(B') \hspace{20px} \text{By $(\ref{unionbreak})$ and $(\ref{uniondisjoint})$} \\		  
+ &=&  m(A) + m(B') \hspace{20px} \text{By $(\ref{intersum})$} \\
+ &\le&  m(A) + m(B') \hspace{20px} \text{By $(\ref{partsubs}$) and the monotonocity shown in the previous problem}
+\end{eqnarray*}
+
+\noindent Now we show the induction step.
+\begin{eqnarray*}
+m(\cup^{n+1}_{k=1} E_k) &=& m((\cup^n_{k=1} E_k) \cup E_{n+1}) \\
+&\le& m(\cup^n_{k=1} E_k) + m(E_{n+1}) \hspace{73px} \text{By the induction base} \\
+&\le&  \sum^n_{k = 1} m(E_k) + m(E_{n+1}) =  \sum^{n+1}_{k = 1} m(E_k) \hspace{15px} \text{By the induction step} \\
+\end{eqnarray*}
+
+So we have to show that $m(\cup^n_{k=1} E_k) \le \sum^n_{k = 1} m(E_k)$. Since for all $E$ we have $0 \le m( E)$ it is true for all $n$ that
+\[ \sum^n_{k=1} m(E_k) \le \sum^\infty_{k = 1} m(E_k) \]
+By the previous result we have 
+\[ m(\cup^{n}_{k=1} E_k) \le \sum^n_{k=1} m(E_k) \le \sum^\infty_{k = 1} m(E_k) \implies m(\cup^{n}_{k=1} E_k) \le \sum^\infty_{k = 1} m(E_k)\]
+Since this expression is independent of $n$ we make take the limit to get 
+\[\lim_{n \to \infty} m(\cup^{n}_{k=1} E_k) = m(\cup^{\infty}_{k=1} E_k) \le \sum^\infty_{k = 1} m(E_k) \]
+
+
+\begin{flushleft} 
+Problem 4 - Section 2.1, page 31\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+A set function $c$, defined on all subsets of $\mathbb{R}$, is defined as follows. Define $c(E)$ to be $\infty$ if $E$ has infinityle many members and $c(E)$ to be equal to the number of elements in $E$ if $E$ is finite; define $c(\emptyset) = 0$. Show that $c$ is a countable additive and translation invariant set function. This set function is called the \textbf{counting measure}.
+\\\\ \emph{Proof.}
+
+We first show the translation invariance of $c$. \\
+First we note that the translation of $\emptyset$ by $y \in \mathbb{R}$ is still $\emptyset$ so $c(\emptyset + y) = c(\emptyset) = 0$. Now let $f$ be a function such that $f: E \to E + y$ defined as follows. If $x \in E$ then $f$ takes $x \to x + y \in E + y$. This function is clearly bijective so $E$ and $E + y$ have the same 'number' of elements. That is, finite sets are taken to finite sets and infinite sets are taken to infinite sets. This means that $c(E) = c(E + y)$ which finishes the translation invariance of $c$.\\
+\indent Now we show the countable additivity of $c$.
+We consider $\{ E_k \}^\infty_{k = 1}$, a disjoint countable collection of sets.\\
+If any of the sets $E_k$ is infinite then the relationship 
+\begin{equation}
+c(\cup^\infty_{k = 1} E_k) = \sum^\infty_{k = 1} c(E_k) \label{countingmeas-ca}
+\end{equation}
+ is trivially true. We now assume that all $E_k$ are finite.
+First we assume that there are infinitly many $E_k$ that are non-empty and we drop the empty sets from the equation since they don't contribute to the union or the sum in (\ref{countingmeas-ca}).
 
 \end{document}  
