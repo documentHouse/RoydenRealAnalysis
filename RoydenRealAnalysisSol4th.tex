@@ -1,0 +1,69 @@
+%\documentclass[11pt,reqno]{amsart}
+\documentclass[11pt,reqno]{article}
+\usepackage[margin=.8in, paperwidth=8.5in, paperheight=11in]{geometry}
+%\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent7
+\usepackage{graphicx}
+\usepackage{pstricks}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{amsmath}
+\pagestyle{plain}
+%\renewcommand{\topfraction}{0.3}
+%\renewcommand{\bottomfraction}{0.8}
+%\renewcommand{\textfraction}{0.07}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Real Analysis - H.L. Royden: \\  4th Edition Solutions}
+\author{Andrew Rickert}
+\date{Started: Dec 6, 2011}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+
+% Old Problem Delimiter
+%\begin{flushleft} 
+%\textbf{Class 18.100B} - Problem 1\\
+%\rule{500pt}{1pt}\\
+%\end{flushleft} 
+
+\begin{flushleft} 
+Problem 1 - Section 2.1, page 31\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Prove that if $A$ and $B$ are two sets in $\mathcal{A}$ with $A \subseteq B$, then $m(A) \le m(B)$. This property is called \emph{monotonicity}.
+\\\\ \emph{Proof.}
+
+Let $B' = B \sim A$ so that $B = B' \cap A = \emptyset$ by the construction of the set $B'$. Since $A \subseteq B$ we have that $B = B' \cup A$. Because $A$ and $B'$ are disjoint we use the countable additivity of the measure and that $m(E) \ge 0$ for all $E$ to derive:
+\begin{eqnarray*}
+m(B) &=& m(A \cup B') = m(A) + m(B') \\
+        &&\hspace{53px}\ge m(A)
+\end{eqnarray*}
+
+\begin{flushleft} 
+Problem 2 - Section 2.1, page 31\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Prove that if there is a set $A$ in the collection $\mathcal{A}$ for which $m(A) < \infty$, then $m(\emptyset) = 0$.
+\\\\ \emph{Proof.}
+
+Let $A$ have finite measure. Note that since $A \cap \emptyset = \emptyset$ that $A$ and $\emptyset$ are disjoint. We may then apply countable additivity to show:
+\begin{equation*}
+m(A) = m(A \cup \emptyset) = m(A) + m(\emptyset) \implies m(\emptyset) = 0
+\end{equation*}
+
+
+\begin{flushleft} 
+Problem 2 - Section 2.1, page 31\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Let $\{ E_k \}^\infty_{k = 1}$ be a countable collection of sets in $\mathcal{A}$. Prove that $m(\cup^\infty_{k=1} E_k) \le \sum^\infty_{k = 1} m(E_k)$
+\\\\ \emph{Proof.}
+
+\end{document}  
