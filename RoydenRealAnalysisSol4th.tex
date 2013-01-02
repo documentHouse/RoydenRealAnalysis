@@ -113,7 +113,67 @@ If any of the sets $E_k$ is infinite then the relationship
 \begin{equation}
 c(\cup^\infty_{k = 1} E_k) = \sum^\infty_{k = 1} c(E_k) \label{countingmeas-ca}
 \end{equation}
- is trivially true. We now assume that all $E_k$ are finite.
-First we assume that there are infinitly many $E_k$ that are non-empty and we drop the empty sets from the equation since they don't contribute to the union or the sum in (\ref{countingmeas-ca}).
+ is trivially true. We now assume that all $E_k$ are finite.\\
+\indent First we assume that there are infinitly many $E_k$ that are non-empty and we drop the empty sets from the equation since they don't contribute to the union or the sum in (\ref{countingmeas-ca}).
+Since there are an infinite number of $E_k$, all of which are disjoint, we have $c(\cup^\infty_{k = 1} E_k) = \infty$. This is so because we may choose a member from each $E_k$ which is distinct from the other members of the sets. We can do this for each $k$ so we form a new set $E'$ which is the union of these elements and is 1 to 1 correspondence with $\mathbb{N}$. This is a subset of $(\cup^\infty_{k = 1} E_k$ so we have the state counting measure.\\
+\indent Also, because we know there are an infinity of $E_k$ which are nonempty we know that $1 \le c(E_k) \implies \infty \le c(\sum_{k = 1}^\infty E_k) \implies c(\sum_{k = 1}^\infty E_k) = \infty $. This once again gives the relation in (\ref{countingmeas-ca}).\\
+The case of a finite number of disjoint $E_k$ is a simple induction and proof is complete.
+
+
+\begin{flushleft} 
+Problem 5 - Section 2.2, page 34\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+By using the properties of outer measure, prove that the interval $[0,1]$ is not countable.
+\\\\ \emph{Proof.}
+
+As was shown in the text, the outer measure of countable sets is 0. One of the properties of outer measure is that the outer measure of an interval is its length. Since $m^*([0,1])= 1 \neq 0$ the assumption that $[0,1]$ is countable leads to a contradiction.
+
+\begin{flushleft} 
+Problem 6 - Section 2.2, page 34\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Let $A$ be the set of irrational numbers in the interval $[0,1]$. Prove that $m^*(A) = 1$.
+\\\\ \emph{Proof.}
+
+Let $\mathbb{Q}' = [0,1] \cap \mathbb{Q}$ and  $A = [0,1] \cap \mathbb{I}$ where $\mathbb{Q}$ are the rational numbers in $\mathbb{R}$. We note that $[0,1] = \mathbb{Q}' \cup A$ and $\mathbb{Q}' \cap A = \emptyset$.
+
+First, $A' \subset [0,1]$ so we have 
+\[ m^*(A) \le m^*([0,1]) = 1\] 
+by monotonocity. On the other hand we have 
+\[1 = m^*([0,1]) = m^*(\mathbb{Q}' \cup A) \le  m^*(A) +  m^*(\mathbb{Q}')  =  m^*(A)\]
+since $\mathbb{Q}'$ is a subset of the rationals which have measure zero.
+So we have both $ m^*(A) \le 1$ and $1 \le m^*(A)$  which implies $m^*(A) = 1$.
+
+\begin{flushleft} 
+Problem 7 - Section 2.2, page 34\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+A set of real numbers is said to be a $G_\delta$ set provided it is the intersection of a countable collection of open sets. Show that for any bounded set $E$, there is a $G_\delta$ set $G$ for which 
+\[ E \subset G \; \text{and} \; m^*(G) = m^*(E) \]
+\\\\ \emph{Proof.}
+
+The outer measure $m^*(E)$ is defined as the infimum of the sums $\sum_{k = 1}^\infty \ell(I_k)$ where the $I_k$ are intervals covering the set $E$. This means that for each $k$ we can chose a collection of open intervals $I_j$ such that  $m^*(E) \le \sum_{j = 1}^\infty \ell(I_j) \le m^*(E) + 1/2^k$ from the definition of the infimum.\\
+\indent Since the $I_j$ are open we can construct a set for each $k$ as $G_k = \cup_j I_j$ which is open since it is a union of open sets. We also know that $E \subset G_k$ for all $k$ because $G_k$ is the open cover formed by the intervals $I_j$. \\
+\indent We now form the set $G = \cap_{k=1} G_k$. From the fact that $E \subset G_k$ for all $k$ we immediately get that $E \subset G$.\\
+\indent We also take advantage of the property that $A \cap B \subset A$ and $A \cap B \subset B$ to note $G = \cap_{k=1} G_k \subset G_k$ for all $k$. \\
+This allows us to derive the final property for the proof
+\begin{eqnarray*}
+&&m*(E) \le m^*(G) \le m^*(G_k) =  \sum_{j = 1}^\infty \ell(I_j) \le m^*(E) + 1/2^k\\
+&& \implies m^*(E) \le m^*(G) \le m^*(E) + 1/2^k \, \text{for all $k$} \\
+&& \implies m^*(E) = m^*(G)\\
+\end{eqnarray*}
+
+
+\begin{flushleft} 
+Problem 8 - Section 2.2, page 34\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Let $B$ be the set of rational numbers in the interval [0,1], and let $\{ I_k \}^n_{k=1}$ be a finite collection of open intervals that covers $B$. Prove that $\sum^n_{k=1} m^*(I_k) \ge 1$.
+\\\\ \emph{Proof.}
 
 \end{document}  
