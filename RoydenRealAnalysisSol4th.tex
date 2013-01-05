@@ -176,4 +176,18 @@ Problem 8 - Section 2.2, page 34\\
 Let $B$ be the set of rational numbers in the interval [0,1], and let $\{ I_k \}^n_{k=1}$ be a finite collection of open intervals that covers $B$. Prove that $\sum^n_{k=1} m^*(I_k) \ge 1$.
 \\\\ \emph{Proof.}
 
+It is true that if $\overline{B}$ is the closure of $B$ and $ B \subset C = \cup_{k = 1}^n I_k$ then $\overline{B} \subset \overline{C}$. We also know that $\overline{ \cup_{k = 1}^n I_k} = \cup_{k = 1}^n \overline{I_k}$ which in this case means the open intervals $I_k$ become closed intervals $\overline{I_k}$. Since $\overline{B} = [0,1]$ we have that the closed intervals $\{\overline{I_k}\}$ cover $[0,1]$.\\
+\indent The open and closed intervals of the same length have the same the outer measure so this allows us to show:
+\[ \sum_{k = 1}^n m^*(I_k) =  \sum_{k = 1}^n m^*(\overline{I_k}) \ge m^*(\cup_{k = 1}^n \overline{I_k}) \ge m^*([0,1]) = 1 \]
+
+\begin{flushleft} 
+Problem 9 - Section 2.2, page 34\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Prove that if $m^*(A) = 0$, then $m^*(A \cup B) = m^*(B)$
+\\\\ \emph{Proof.}
+
+From the fact that $B \subset A \cup B$ we have from montonocity that $m^*(B) \le m^*(A \cup B)$. We also have by countable subadditivity we have $m^*(A \cup B) \le m^*(A) + m^*(B) = m^*(B)$. These two relationships give $m^*(B) = m^*(A \cup B)$.
+
 \end{document}  
