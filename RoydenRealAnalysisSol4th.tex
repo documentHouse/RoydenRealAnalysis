@@ -208,6 +208,24 @@ Problem 11 - Section 2.2, page 39\\
 Prove that if a $\sigma$-algebra of subsets of $\mathbb{R}$ contains intervals of the form $(a,\infty)$, then it contains all intervals.
 \\\\ \emph{Proof.}
 
+We make take the complement of $(a,\infty)$ with respect to $\mathbb{R}$, since we have a $\sigma$-algebra, to get all intervals of the form $(-\infty, b]$.\\
+We may then also derive the following intervals because countable unions and intersections are again in the $\sigma$-algebra.
+
+\begin{eqnarray*}
+(-\infty, b) &=& \cup_{k = 1}^\infty (-\infty, b - \frac{1}{n}] \\
+\left[a, \infty \right) &=& \cap_{k = 1}^\infty (a - \frac{1}{n}, \infty]
+\end{eqnarray*}
+
+We may now derive the final intervals as follows, again appealing to the fact that we are in a $\sigma$-algebra.
+
+\begin{eqnarray*}
+(a, b) &=& (a, \infty) \cap (-\infty, b) \\
+(a, b] &=& (a, \infty) \cap (-\infty, b] \\
+\left[a, b\right) &=& [a, \infty) \cap (-\infty, b) \\
+\left[a, b\right] &=& [a, \infty) \cap (-\infty, b] \\
+\end{eqnarray*}
+
+
 \begin{flushleft} 
 Problem 12 - Section 2.2, page 39\\
 \rule{500pt}{1pt}\\
@@ -215,6 +233,8 @@ Problem 12 - Section 2.2, page 39\\
 
 Show that every interval is a Borel set.
 \\\\ \emph{Proof.}
+
+The Borel set is the $\sigma$ algebra that contains all the open sets. Since $(a, \infty)$ is an open set the result of Problem 11 shows that the Borel sets contain all intervals.
 
 \begin{flushleft} 
 Problem 13 - Section 2.2, page 40\\
@@ -228,14 +248,19 @@ Show that (i) the translate of an $F_\sigma$ set is also $F_\sigma$, (ii) the tr
 Problem 14 - Section 2.2, page 40\\
 \rule{500pt}{1pt}\\
 \end{flushleft} 
-Show that if a set $E$ has positive outer measure, then there is a bounded subset of $E$ that also has positive outer measure.
+
+Show that if a set $E$ has positive outer measure, then there is a bounded subset of $E$ that also has positive outer measure.
 \\\\ \emph{Proof.}
+ 
+Let $I_n$ be the interval $[n, n + 1] $,  then it is the case that $E = \cup_{n = 1} ^\infty  E\cap I_n $.  From the property of countable subadditivity we have that $0 \le m^*(E) \le \sum_{n  = 1}^\infty m^*(E\cap I_n)$ which shows that one of the intersections of $E$ with $I_n$ must have a positive value. \\
+\indent If this were not the case then the outer measure of all of the intersections of $E$ with the intervals would be zero. By the earlier statement that $0 \le m^*(E) \le \sum_{n  = 1}^\infty m^*(E\cap I_n)$ this would imply that the outer measure of $E$ is zero contrary to our assumption. Therefore one of the intersections with the intervals $I_n$ must have a positive outer measure.
 
 \begin{flushleft} 
 Problem 15 - Section 2.2, page 40\\
 \rule{500pt}{1pt}\\
 \end{flushleft} 
-Show that if $E$ has finite measure and $\epsilon > 0$, then $E$ is the disjoint union of a finite number of measurable sets, each of which as measure at most $\epsilon$.
+
+Show that if $E$ has finite measure and $\epsilon > 0$, then $E$ is the disjoint union of a finite number of measurable sets, each of which as measure at most $\epsilon$.
 \\\\ \emph{Proof.}
 
 
