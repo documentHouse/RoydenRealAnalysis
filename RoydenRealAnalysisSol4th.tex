@@ -263,5 +263,24 @@ Problem 15 - Section 2.2, page 40\\
 Show that if $E$ has finite measure and $\epsilon > 0$, then $E$ is the disjoint union of a finite number of measurable sets, each of which as measure at most $\epsilon$.
 \\\\ \emph{Proof.}
 
+It must be the case that there exists an $M$ such that $m^*(E \sim [-M, M]) \le \epsilon$.  This is to say there must be a bounded interval $[-M, M]$ that contains all but $\epsilon$ of the set $E$. If this were not the case then we have  $m^*(E \sim [-M, M]) > \epsilon$ for all $M$ which says that $E$ does not have finite measure. If we let $S = E \sim [-M, M]$ then $m^*(S) \le \epsilon$.\\
+\indent We now break up $[-M, M]$ into sets of size at most $\epsilon$ based on the following pattern:
+
+\begin{eqnarray*}
+S_1 &=& [-M, -M + \epsilon)\\
+S_2 &=& [-M + \epsilon, -M + 2 \epsilon)\\
+S_3 &=& [-M + 2 \epsilon, -M + 3 \epsilon]\\
+\ldots&&
+\end{eqnarray*}
+
+\indent Since we have $S \cup S_1 \cup S_2 \cdots = \mathbb{R}$ we know that $E$ is a subset of this union each of whose elements are disjoint and of outer measure less than or equal to $\epsilon$. The disjoint union we are looking for is therefore
+\[ E = (E \cap S) \cup (E \cap S_1) \cup (E \cap S_2) \cdots \]
+
+
+%\begin{\eqnarray*}
+%S_1 &=& [-M, -M + \epsilon]\\
+%S_1 &=& [-M, -M + \epsilon]
+%\end{\eqnarray*}
+
 
 \end{document}  
