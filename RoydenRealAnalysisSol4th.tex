@@ -245,11 +245,22 @@ Show that (i) the translate of an $F_\sigma$ set is also $F_\sigma$, (ii) the tr
 \\\\ \emph{Proof.}
 
 We start by showing that the translate of an open set is open. We note first that the translate of open interval $(a,b)$ is $(a + y, b + y)$ which is still an open interval. An open set is a countable union of open intervals so we know that 
-\[ F = \cup^\infty_{n = 1}(a_n, b_n) \implies  F + y = \cup^\infty_{n = 1}(a_n + y, b_n + y)  \]
+\[ O = \cup^\infty_{n = 1}(a_n, b_n) \implies  O + y = \cup^\infty_{n = 1}(a_n + y, b_n + y)  \]
 
-Since each of the intervals $(a_n + y, b_n + y)$ is open by the previous comment we have $F +  y$ as a countable union of open sets which is open.
+Since each of the intervals $(a_n + y, b_n + y)$ is open by the previous comment we have $O +  y$ as a countable union of open sets which is open.\\
+\indent We also need to show that the translation of a closed set is also closed. We do this by first noting that if $C$ is a closed set and the complement of $C$ in $\mathbb{R}$ is $C'$ then we have the following relationship $C' + y = (C + y)'$ since
+\[ x \in C' + y \iff x - y \in C' \iff x- y \notin C \iff x \notin C + y \iff x \in (C + y)' \] \\
+Now since $C$ is closed we know that $C'$ is open. We form the translate and use the previous relationship to note that since $C' + y = (C + y)'$ that $(C + y)'$ must be open. This means that $C+y$ must be closed so we have shown that 
+\[ C \; \text{is closed} \implies C + y \; \text{is also closed} \]
 
 
+\noindent We can solve the parts of the problem:\\
+
+\noindent (i) Let $F \in F_\sigma$ so that $F = \cup^\infty_{n = 1} C_n$ where $C_n$ are closed sets. We know that $F + y = \cup^\infty_{n = 1} C_n + y$ and by the previous comments each of the $C_n + y$ is closed so $F + y$ is a countable intersection of closed sets therefore $F + y \in F_\sigma$\\
+
+\noindent (ii) Similarly, let $G \in G_\delta$ so that $G = \cap^\infty_{n = 1} O_n$ where $O_n$ are open sets. We know that $G + y = \cap^\infty_{n = 1} O_n + y$ and by the previous comments each of the $O_n + y$ is open so $G + y$ is a countable union of open sets therefore $G + y \in G_\delta$\\
+
+\noindent (iii) We first note that by hypothesis the measurable set $E$ is such that $m^*(E) = 0$. By proposition 10 we know that the translate of a measurable set is measurable. By the translation invariance of measure we also know that $m^*(E  +y) = m^*(E) = 0$.
 
 \begin{flushleft} 
 Problem 14 - Section 2.2, page 40\\
