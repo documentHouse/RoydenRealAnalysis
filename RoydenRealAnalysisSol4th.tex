@@ -295,10 +295,80 @@ S_3 &=& [-M + 2 \epsilon, -M + 3 \epsilon]\\
 \[ E = (E \cap S) \cup (E \cap S_1) \cup (E \cap S_2) \cdots \]
 
 
-%\begin{\eqnarray*}
-%S_1 &=& [-M, -M + \epsilon]\\
-%S_1 &=& [-M, -M + \epsilon]
-%\end{\eqnarray*}
+\begin{flushleft} 
+Problem 16 - Section 2.3, page 43\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Complete the proof of Theorem 11 by showing that measurability is equivalent to (iii) and also equivalent to (iv).
+\\\\ \emph{Proof.}
+
+\begin{flushleft} 
+Problem 17 - Section 2.3, page 43\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Show that a set $E$ is measurable if and only if for each $\epsilon > 0$,  there is a closed set $F$ and open set $O$ for which $F \subset E \subset O$  and $m^*(O \sim F) < \epsilon$.
+\\\\ \emph{Proof.}
+
+\begin{flushleft} 
+Problem 18 - Section 2.3, page 43\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Let $E$ have finite outer measure. Show that there is an $F_\sigma$ set $F$ and a $G_\delta$ set $G$ such that 
+\[ F \subset E \subset G \; \text{and} \; m^*(F) = m^*(E) = m^*(G) \]
+\\ \emph{Proof.}
+
+\begin{flushleft} 
+Problem 19 - Section 2.3, page 43\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Let $E$ have finite outer measure. Show that if $E$ is not measurable, then there is an open set $O$ containing $E$ that has finite outer measure and for which 
+\[ m^*(O \sim E) > m^*(O) - m^*(E) \]
+\\ \emph{Proof.}
+
+
+\begin{flushleft} 
+Problem 20- Section 2.3, page 43\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+(Lebesgue) Let $E$ have finite outer measure. Show that $E$ is measurable if and only if for each open, bounded interval $(a,b)$,
+\[ b - a =  \ m^*((a,b) \cap E) + m^*((a,b) \sim E). \]
+\\\\ \emph{Proof.}
+
+First we show that if $E$ is measurable then we have the expression above. This is straightforward because  by the definition of measurability we have
+
+\[  m^*(A) = m^*(A \cap E) + m^*(A \cap E^C) \]
+
+\noindent Since it is true that $A \sim E = A \cap E^C$ we have
+
+\[  m^*(A) = m^*(A \cap E) + m^*(A \sim E) \]
+
+\noindent Finally we substitute $A = (a,b)$ and we note from a previous proposition that $m^*((a,b)) = b - a$ to get:
+
+\begin{equation} 
+b - a =  m^*((a,b) \cap E) + m^*((a,b) \sim E). \label{intervalmeasure} 
+\end{equation}
+
+Now we show that $b - a =  m^*((a,b) \cap E) + m^*((a,b) \sim E)$ implies the measurability of $E$. By Theorem 11 this is equivalent to showing that for each $\epsilon > 0$,  there is an open set $O$ containing $E$ for which $m^*(O \sim E) < \epsilon$.\\
+
+Because $E$ has finite outer measure there exists, for every $\epsilon > 0$, a set of intervals $I_n = (a_n, b_n)$ such that 
+\[ \sum^\infty m^*(I_n)  \le \epsilon  + m^*(E) \]
+
+Now let $O = \cup^\infty I_n$ and perform the following algebra:
+
+\begin{eqnarray*}
+m^*(O \sim E) = m^*((\cup^\infty I_n) \sim E) &=& m^*(\cup^\infty (I_n \sim E))  \\
+&\le& \sum^\infty m^*(I_n \sim E) \hspace{15px} \text{from countable subadditivity} \\
+&\le& \sum^\infty m^*(I_n) -  m^*(I_n \cap E) \hspace{15px} \text{from (\ref{intervalmeasure}) since $I_n = (a_n, b_n)$} \\
+&\le& \sum^\infty m^*(I_n) -  \sum^\infty m^*(I_n \cap E) \hspace{15px} \\
+\end{eqnarray*}
+
+The last step comes from the fact that $E$ is of finite measure,  $\sum^\infty m^*(I_n)$ differs from $E$ by at most $\epsilon$ and that the outer measure is positive definite. Riemanns theorem on series allows for the rearrangement.
+
 
 
 \end{document}  
