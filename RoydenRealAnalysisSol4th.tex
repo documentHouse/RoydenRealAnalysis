@@ -311,6 +311,11 @@ Problem 17 - Section 2.3, page 43\\
 Show that a set $E$ is measurable if and only if for each $\epsilon > 0$,  there is a closed set $F$ and open set $O$ for which $F \subset E \subset O$  and $m^*(O \sim F) < \epsilon$.
 \\\\ \emph{Proof.}
 
+We first assume that $E$ is measurable. By Theorem 11 $(i)$ for each $\epsilon$ there is a open set $O$ containing $E$ such that $m^*(O \sim E) < \epsilon / 2$. Also, by Theorem 11 $(iii)$ for each $\epsilon$ there is a closed set $F$ contained in $E$ such that $m^*(E \sim F) < \epsilon / 2$. Using the excision property of measurable sets below gives the first part of the theorem:
+\[ m^*(O \sim F) = m^*(O) - m^*(F) =  m^*(O) - m^*(E) + m^*(E) - m^*(F)  =  m^*(O \sim E) + m^*(E \sim F) < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon  \]
+
+Now we assume there is a closed set $F$ and open set $O$ for which $F \subset E \subset O$  and $m^*(O \sim F) < \epsilon$.
+
 \begin{flushleft} 
 Problem 18 - Section 2.3, page 43\\
 \rule{500pt}{1pt}\\
@@ -355,19 +360,34 @@ b - a =  m^*((a,b) \cap E) + m^*((a,b) \sim E). \label{intervalmeasure}
 
 Now we show that $b - a =  m^*((a,b) \cap E) + m^*((a,b) \sim E)$ implies the measurability of $E$. By Theorem 11 this is equivalent to showing that for each $\epsilon > 0$,  there is an open set $O$ containing $E$ for which $m^*(O \sim E) < \epsilon$.\\
 
-Because $E$ has finite outer measure there exists, for every $\epsilon > 0$, a set of intervals $I_n = (a_n, b_n)$ such that 
-\[ \sum^\infty m^*(I_n)  \le \epsilon  + m^*(E) \]
+Because $E$ has finite outer measure there exists, for every $\epsilon > 0$, a set of intervals $I_n = (a_n, b_n)$ that cover $E$ such that 
+\begin{equation} 
+\sum^\infty m^*(I_n)  \le \epsilon  + m^*(E) \label{finitemeasurebound} 
+\end{equation}
 
 Now let $O = \cup^\infty I_n$ and perform the following algebra:
 
-\begin{eqnarray*}
-m^*(O \sim E) = m^*((\cup^\infty I_n) \sim E) &=& m^*(\cup^\infty (I_n \sim E))  \\
-&\le& \sum^\infty m^*(I_n \sim E) \hspace{15px} \text{from countable subadditivity} \\
-&\le& \sum^\infty m^*(I_n) -  m^*(I_n \cap E) \hspace{15px} \text{from (\ref{intervalmeasure}) since $I_n = (a_n, b_n)$} \\
-&\le& \sum^\infty m^*(I_n) -  \sum^\infty m^*(I_n \cap E) \hspace{15px} \\
+\begin{eqnarray}
+m^*(O \sim E) = m^*((\cup^\infty I_n) \sim E) &=& m^*(\cup^\infty (I_n \sim E))  \nonumber \\
+&\le& \sum^\infty m^*(I_n \sim E) \hspace{15px} \text{from countable subadditivity} \nonumber \\
+&\le& \sum^\infty (m^*(I_n) -  m^*(I_n \cap E)) \hspace{15px} \text{from (\ref{intervalmeasure}) since $I_n = (a_n, b_n)$} \nonumber \\
+&\le& \sum^\infty m^*(I_n) -  \sum^\infty m^*(I_n \cap E) \hspace{15px} \label{riemannrearr}
+\end{eqnarray}
+
+The last step comes from the fact that $E$ is of finite measure,  $\sum^\infty m^*(I_n)$ differs from $E$ by at most $\epsilon$ and that the outer measure is positive definite. These facts allow us to use Riemanns theorem on rearrangement to produce the sum in $(\ref{riemannrearr})$.\\
+We now show
+\begin{eqnarray*} 
+&&m^*(O \cap E) =  m^*(\cup^\infty I_n \cap E) \le \sum^\infty  m^*(I_n \cap E) \; \text{by countable subadditivity}\\
+&&\implies \sum^\infty m^*(I_n) -  \sum^\infty  m^*(I_n \cap E) \le \sum^\infty m^*(I_n) - m^*(O \cap E) 
 \end{eqnarray*}
 
-The last step comes from the fact that $E$ is of finite measure,  $\sum^\infty m^*(I_n)$ differs from $E$ by at most $\epsilon$ and that the outer measure is positive definite. Riemanns theorem on series allows for the rearrangement.
+\noindent Applying the above inequality to the inequality derived in $(\ref{riemannrearr})$ gives
+
+\begin{eqnarray*}
+m^*(O \sim E) \le m^*(I_n) -  \sum^\infty m^*(I_n \cap E) &\le& \sum^\infty m^*(I_n) - m^*(O \cap E) \\
+&\le& \sum^\infty m^*(I_n) - m^*(E) \; \text{since $E \subset O$} \\
+&\le& \epsilon \; \text{by $(\ref{finitemeasurebound})$}
+\end{eqnarray*}
 
 
 
