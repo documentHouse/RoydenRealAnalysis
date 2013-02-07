@@ -332,8 +332,21 @@ Problem 19 - Section 2.3, page 43\\
 
 Let $E$ have finite outer measure. Show that if $E$ is not measurable, then there is an open set $O$ containing $E$ that has finite outer measure and for which 
 \[ m^*(O \sim E) > m^*(O) - m^*(E) \]
-\\ \emph{Proof.}
+\\ \emph{Proof 1.}
 
+It was shown in the beginning of the section that if $E$ is measurable then $m^*(O \sim E) = m^*(O) - m^*(E)$. Given the hypothesis that $E$ is not measurable we must have
+\begin{eqnarray}
+&&m^*(O \sim E) > m^*(O) - m^*(E) \hspace{8px} \text{or ...} \label{measurediffgreat}\\
+&&m^*(O \sim E) < m^*(O) - m^*(E) \label{measurediffless}
+\end{eqnarray}
+
+Now, since $E \subset O$ we have $O = O \sim E \cup E$ so we may derive 
+\[ m^*(O) =  m^*(O \sim E \cup E) \le m^*(O \sim E) + m^*(E)  \]
+This contradicts the possibility of $(\ref{measurediffgreat})$ which gives only the possibility of $(\ref{measurediffless})$, this completes the proof.\\
+
+\emph{Proof 2.}
+
+We prove the contrapositive that if all open sets $O$ containing $E$ are such that\\ $m^*(O \sim E) \le m^*(O) - m^*(E)$ then $E$ is measurable.
 
 \begin{flushleft} 
 Problem 20- Section 2.3, page 43\\
