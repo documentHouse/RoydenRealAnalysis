@@ -321,9 +321,14 @@ Problem 18 - Section 2.3, page 43\\
 \rule{500pt}{1pt}\\
 \end{flushleft} 
 
-Let $E$ have finite outer measure. Show that there is an $F_\sigma$ set $F$ and a $G_\delta$ set $G$ such that 
-\[ F \subset E \subset G \; \text{and} \; m^*(F) = m^*(E) = m^*(G) \]
+\noindent \emph{Corrected Problem statement from errata}:\\
+\indent Let $E$ have finite outer measure. Show that there is a $G_\sigma$ set $G$ for which $E \subset G$ and $m^*(E) = m^*(G)$. Use this to show that $E$ is measurable if and only if there is an $F_\sigma$ set, $F$, for which $F \subset E$ and $m^*(F) = m^*(E)$.
 \\ \emph{Proof.}
+
+The first part of the implication, that $E$ is measurable implies that there is a $F \in F_\sigma$ such that $m^*(F) = m^*(E)$, is straight forward. Since $E$ is measurable we know from theorem 11 part $(iv)$ that there exists an $F \in F_\sigma$ such that $m^*(E \sim F) = 0$. By the excision property we get 
+\[  m^*(E) - m^*(F) = m^*(E \sim F) = 0 \implies m^*(E) = m^*(F) \]
+
+\noindent We now need to show that if there exists an $F \in F_\sigma$ such that $m^*(E \sim F) = 0$ and a $G \in G_\sigma$ for which $E \subset G$ and $m^*(E) = m^*(G)$ then E is measurable.
 
 \begin{flushleft} 
 Problem 19 - Section 2.3, page 43\\
