@@ -342,11 +342,24 @@ It was shown in the beginning of the section that if $E$ is measurable then $m^*
 
 Now, since $E \subset O$ we have $O = O \sim E \cup E$ so we may derive 
 \[ m^*(O) =  m^*(O \sim E \cup E) \le m^*(O \sim E) + m^*(E)  \]
-This contradicts the possibility of $(\ref{measurediffgreat})$ which gives only the possibility of $(\ref{measurediffless})$, this completes the proof.\\
+This contradicts the possibility of $(\ref{measurediffless})$ which gives only the possibility of $(\ref{measurediffgreat})$, this completes the proof.\\
 
 \emph{Proof 2.}
 
-We prove the contrapositive that if all open sets $O$ containing $E$ are such that\\ $m^*(O \sim E) \le m^*(O) - m^*(E)$ then $E$ is measurable.
+We prove the contrapositive that if all open sets $O$ containing $E$ are such that\\ $m^*(O \sim E) \le m^*(O) - m^*(E)$ then $E$ is measurable.\\
+We know that $E$ has finite measure so for each $\epsilon > 0$ there exists a set of open intervals $I_n$ such that 
+\[ \sum^\infty \ell(I_n) < m^*(E) + \epsilon\]
+
+\noindent If we now let $O = \cup^\infty I_n$ then we know that $m^*(O) \le \sum^\infty \ell(I_n)$ since 
+\[ m^*(O) = m^*(  \cup^\infty I_n ) \le \sum^\infty m^*(I_n) = \sum^\infty \ell(I_n)  \]
+
+\noindent We may now derive the following:
+\[ m^*(O) \le \sum^\infty \ell(I_n) < m^*(E) + \epsilon \implies m^*(O) - m^*(E) < \epsilon \]
+
+\noindent so we have shown for each $\epsilon > 0$ there exists an open set $O$ which contains $E$ such that 
+\[ m^*(O) - m^*(E) < \epsilon \implies m^*(O \sim E) < \epsilon\]
+
+\noindent By Theorem 11 $(i)$ this shows that $E$ is measurable. This completes the proof.
 
 \begin{flushleft} 
 Problem 20- Section 2.3, page 43\\
