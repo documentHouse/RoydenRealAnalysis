@@ -314,7 +314,7 @@ Show that a set $E$ is measurable if and only if for each $\epsilon > 0$,  there
 We first assume that $E$ is measurable. By Theorem 11 $(i)$ for each $\epsilon$ there is a open set $O$ containing $E$ such that $m^*(O \sim E) < \epsilon / 2$. Also, by Theorem 11 $(iii)$ for each $\epsilon$ there is a closed set $F$ contained in $E$ such that $m^*(E \sim F) < \epsilon / 2$. Using the excision property of measurable sets below gives the first part of the theorem:
 \[ m^*(O \sim F) = m^*(O) - m^*(F) =  m^*(O) - m^*(E) + m^*(E) - m^*(F)  =  m^*(O \sim E) + m^*(E \sim F) < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon  \]
 
-Now we assume there is a closed set $F$ and open set $O$ for which $F \subset E \subset O$  and $m^*(O \sim F) < \epsilon$.
+Now we assume there is a closed set $F$ and open set $O$ for which $F \subset E \subset O$  and $m^*(O \sim F) < \epsilon$. Since $F \subset E \subset O$ we have $ \emptyset \subset E \sim F \subset O \sim F$. So by monotonicity we have $m^*(E \sim F) \le m^*(O \sim F)$ which implies by the hypothesis $m^*(O \sim F) < \epsilon$ that $m^*(E \sim F) < \epsilon$. So by Theorem 11 part $(iii)$ that $E$ is measurable.
 
 \begin{flushleft} 
 Problem 18 - Section 2.3, page 43\\
@@ -326,9 +326,21 @@ Problem 18 - Section 2.3, page 43\\
 \\ \emph{Proof.}
 
 The first part of the implication, that $E$ is measurable implies that there is a $F \in F_\sigma$ such that $m^*(F) = m^*(E)$, is straight forward. Since $E$ is measurable we know from theorem 11 part $(iv)$ that there exists an $F \in F_\sigma$ such that $m^*(E \sim F) = 0$. By the excision property we get 
-\[  m^*(E) - m^*(F) = m^*(E \sim F) = 0 \implies m^*(E) = m^*(F) \]
+\begin{equation}  
+m^*(E) - m^*(F) = m^*(E \sim F) = 0 \implies m^*(E) = m^*(F) \label{openbound}
+\end{equation}
 
-\noindent We now need to show that if there exists an $F \in F_\sigma$ such that $m^*(E \sim F) = 0$ and a $G \in G_\sigma$ for which $E \subset G$ and $m^*(E) = m^*(G)$ then E is measurable.
+
+We now need to show that if there exists an $F \in F_\sigma$ such that $m^*(E \sim F) = 0$ and a $G \in G_\sigma$ for which $E \subset G$ and $m^*(E) = m^*(G)$ then E is measurable. First we show that there is a $G \in G_\sigma$ such that $m^*(E) = m^*(G)$. By the definition of outer measure we have for each $k$ that
+\[ \sum^\infty \ell(I_j) \le m^*(E) + \frac{1}{k} \]
+where $I_k$ are open intervals. If we let the $O_k = \cup \ell(I_j)$ for each $k$ then because each $O_k$ is open we may form $G = \cap O_k$. By $(\ref{openbound})$ we have for every $k$ that
+\[ 0 \le m^*(G) \le m^*(E) + \frac{1}{k} \implies m^*(G) - m^*(E) < \frac{1}{k} \]
+Taking the limit gives us that $0 \le m^*(G) - m^*(E) \le 0 \implies m^*(G) = m^*(E)$. We can now finish the proof by taking this result along with there existing a $F \subset E$ such that $m^*(F) = m^*(E)$ to show the measurability of $E$.
+Since $F$ is measurable by the excision property we have
+\[ m^*(G \sim F) = m^*(G) - m^*(F) = m^*(G) - m^*(E) + m^*(E) - m^*(F) = 0 \]
+Also, because $F \subset E \subset G$ we have $E \sim F \subset G \sim F$. By monotonicity we have 
+\[ 0 \le m^*(E \sim F) \le m^*(G \sim F) = 0  \implies m^*(E \sim F) = 0\] 
+We may write $E = F \cup E \sim F$. Since $E \sim F$ has measure zero it is measurable and $F \in F_\delta$ so $F$ is measurable as well. Because the set of measurable sets is a $\sigma$-algebra the union of the two measurable sets $F$ and $E \sim F$ is also a measurable set so $E$ is measurable.
 
 \begin{flushleft} 
 Problem 19 - Section 2.3, page 43\\
