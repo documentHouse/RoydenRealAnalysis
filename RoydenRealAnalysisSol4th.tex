@@ -379,7 +379,7 @@ We know that $E$ has finite measure so for each $\epsilon > 0$ there exists a se
 \noindent By Theorem 11 $(i)$ this shows that $E$ is measurable. This completes the proof.
 
 \begin{flushleft} 
-Problem 20- Section 2.3, page 43\\
+Problem 20 - Section 2.3, page 43\\
 \rule{500pt}{1pt}\\
 \end{flushleft} 
 
@@ -432,6 +432,22 @@ m^*(O \sim E) \le m^*(I_n) -  \sum^\infty m^*(I_n \cap E) &\le& \sum^\infty m^*(
 &\le& \epsilon \; \text{by $(\ref{finitemeasurebound})$}
 \end{eqnarray*}
 
+\begin{flushleft} 
+Problem 21 - Section 2.3, page 43\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
 
+Use property $(ii)$ of Theorem 11 as the primitive definition of a measurable set and prove that the union of two measurable sets is measurable. Then do the same for property $(iv)$.
+\\\\ \emph{Proof.}
+
+The proof for $(ii)$ has two parts with the proof for $(iv)$ being analogous. We are told we need to prove that the union of two sets $E$ and $E'$ is measurable given that each set is measurable individually. We need to do this using $(ii)$ of theorem so, explicitly we need to prove that given $E$ and $E'$ are measurable as defined by $(ii)$ we need to show that:\\
+\indent There is a $G_\delta$ set $G''$ containing $E \cup E'$ for which $m^*(G \sim E \cup E') = 0$. \\
+
+\noindent We will show that if $G$ satisfies $(ii)$ for $E$ and $G'$ satisfies $(ii)$ for $E'$ then $G'' = G \cup G'$ is the set we are looking for.
+
+The first part of the proof is showing that $m^*(G \cup G \sim E \cup E') = 0$. To do this we note that $(G \cup G \sim E \cup E') \subset (G \sim E \cup G' \sim E')$. We can quickly show this by taking $x \in G \cup G \sim E \cup E'$ which means that $x \in G$ or $x \in G'$ but $x \notin E$ and $x \notin E'$. If $x \in G$ then $x \in G \sim E$ and so $x \in G \sim E \cup G' \sim E'$. If on the other hand if $x \in G'$ then $x \in G' \sim E'$ so $x \in G \sim E \cup G' \sim E'$. This shows that $x$ must be in $G \sim E \cup G' \sim E'$ so the stated relation holds.
+We may now use monotonicity and then countable subadditivity to finish the first part of the proof:
+\[  0 \le m^*(G \cup G \sim E \cup E') \le m^*(G \sim E \cup G' \sim E') \le m^*(G \sim E) + m^*(G' \sim E') = 0  \]
+This shows that $m^*(G \cup G \sim E \cup E') = 0$.  The second part of the proof is showing that if $G \in G_\delta$ and $G' \in G_\delta$ then $G \cup G' \in G_\delta$.
 
 \end{document}  
