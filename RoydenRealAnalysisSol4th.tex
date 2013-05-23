@@ -486,5 +486,76 @@ m(E_2) =  m(E_2 \cap E_1) + m(E_2 \cap E_1^c) \implies m(E_2 \cap E_1^c) = m(E_2
 
 \noindent This completes the proof
 
+\begin{flushleft} 
+Problem 25 - Section 2.5, page 47\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Show that the assumption that $m(B_1) < \infty$ is necessary in part (ii) of the theorem regarding continuity of measure.
+\\\\ \emph{Proof.}
+
+If we take $B_k = [k, \infty)$ then it is the case that $B_{k+1} \subset B_k$ for all $k$ but also the case that $m(B_k) = \infty$  for all $k$. 
+
+Since $m(B_k) = \infty$  for all $k$ it is true that $\lim_{n \to \infty} m(B_k) = \infty$.
+
+On the other hand it is clear that $\cap_{n = 1}^\infty B_k = \emptyset$ for suppose $x < \infty$ and $x \in \cap_{n = 1}^\infty B_k$. This implies that $x \in B_k$ for all $k$. This in turn implies that $k < x$ for all $k$ which is only possible in the case that $x = \infty$, this is a contradiction. From this we conclude that $m(\cap_{n = 1}^\infty B_k) = m(\emptyset) = 0$ so that 
+\[ m(\cap_{n = 1}^\infty B_k) \neq \lim_{n \to \infty} m(B_k) \]
+
+\begin{flushleft} 
+Problem 26 - Section 2.5, page 47\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Let $\{E_k\}_{k=1}^\infty$ be a countable disjoint collection of measurable sets. Prove that for any set $A$,
+\[ m^*(A \cap \bigcup_{k=1}^\infty E_k) = \sum_{k=1}^\infty m^*(A \cap E_k) \]
+\\\\ \emph{Proof.}
+
+We start by noting that 
+\[  A \cap \bigcup_{k=1}^\infty E_k = \bigcup_{k=1}^\infty A \cap E_k \]
+
+\noindent By the countable subadditivity of outer measure we have 
+
+\[ m^*(A \cap \bigcup_{k=1}^\infty E_k) = m^*(\bigcup_{k=1}^\infty A \cap E_k) \le  \sum_{k=1}^\infty m^*(A \cap E_k)  \]
+
+If we can now show that $m^*(\bigcup_{k=1}^\infty A \cap E_k) \ge  \sum_{k=1}^\infty m^*(A \cap E_k)$ then we are done.
+
+\noindent It is relevant to note that $\cup_{k=1}^n E_k \subset \cup_{k=1}^\infty E_k$ for all $n$. This implies then that $A \cap \bigcup_{k=1}^n E_k \subset A\cap \bigcup_{k=1}^\infty E_k$. By proposition 6, we know that 
+
+\begin{eqnarray*} 
+\sum_{k=1}^n m^*(A \cap E_k) &=& m^*(A \cap \bigcup_{k=1}^n E_k) \\
+&\le& m^*(A \cap \bigcup_{k=1}^\infty E_k) \; \text{by the previous comment and monotonocity} \\
+\end{eqnarray*}
+
+Because the right hand side in the above expression is independent of $n$ we may safely take the limit on the left hand side to obtain.
+\[ \sum_{k=1}^\infty m^*(A \cap E_k) \le m^*(A \cap \bigcup_{k=1}^\infty E_k) \]
+
+\noindent This completes the proof.
+
+\begin{flushleft} 
+Problem 27 - Section 2.5, page 47\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Let $\mathcal{M}'$ be any $\sigma$-algebra of subsets of $\mathbb{R}$ and $m'$ a set function on $\mathcal{M}'$ which takes values in $[0,\infty]$, is countably additive, and such that $m'(\emptyset) = 0$
+
+\noindent (i)  Show that $m'$ is finitely additive, monotone, countable monotone, and possesses the excision property.
+
+\noindent (ii) Show that $m'$ possesses the same continuity properties as Lebesgue measure.
+\\\\ \emph{Proof.}
+
+For part (i) we need to show that $m'$ as defined above is finitely additive, monotone, countable monotone, and possesses the excision property.
+We start with finite additivity. This is straightforward because we are given that $m'$ is countably additive. So, if $E_1, E_2, ...$ are disjoint then we are given that 
+\[ m'(\cup_{n = 1}^\infty E_k) = \sum_{n =1}^\infty m'(E_k) \]
+If we take $E_k = \emptyset$ for $k > n$ and use the fact that $m'(\emptyset) = 0$ then we derive
+\[ m'(\cup_{n = 1}^n E_k) = \sum_{n =1}^n m'(E_k) \]
+which shows the finite additivity.
+
+Monotonocity can be shown by supposing $A \subset B$. We note that $A$ and $B \sim A$ are disjoint. Since $A \subset B$ we know that $A \cup (B \sim A) = B$. From finite additivity and the fact that $A$ and $B \sim A$ are disjoint we derive:
+\[ m'(B) = m'(A \cup (B \sim A)) = m'(A) + m'(B \sim A) \ge m'(A) \]
+which demonstrates monotonocity.
+
 
 \end{document}  
+
+
+
