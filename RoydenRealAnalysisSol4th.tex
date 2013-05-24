@@ -554,8 +554,66 @@ Monotonocity can be shown by supposing $A \subset B$. We note that $A$ and $B \s
 \[ m'(B) = m'(A \cup (B \sim A)) = m'(A) + m'(B \sim A) \ge m'(A) \]
 which demonstrates monotonocity.
 
+There are two ways to show countable monotonocity. We will show both ways as an exercise. Both proofs depend on the observation that if $\{ E_k \}_{k = 1}^\infty$ covers $E$ then
+\[ E \subset \cup_{k = 1}^\infty E_k \implies m'(E) \le m'(\cup_{k = 1}^\infty E_k) \]
+So each of the two proofs will show that $m'(\cup_{k = 1}^\infty E_k) \le \sum_{k = 1}^\infty m'(E_k)$ which establishes the result. \\
+
+For the first method we note that clearly $B \sim A \subset B$ which implies $m'(B \sim A) \le m'(B)$. We now define $B_1 = E_1$ and $B_k  = E_k \sim (\cup_{i = 1}^{k - 1} E_i)$ which has the following properties
+\[ B_i \cap B_j = \emptyset, \quad \cup_{k = 1}^\infty E_k = \cup_{k = 1}^\infty B_k  \]
+Through the relationship that $m'(B \sim A) \le m'(B)$ we have that $m'(B_k) = m'(E_k \sim (\cup_{i = 1}^{k - 1} E_i)) \le m'(E_k)$.
+
+Because the $B_k$ are disjoint we may complete the first proof as follows
+\[ m'(\cup_{k = 1}^\infty E_k ) = m'(\cup_{k = 1}^\infty B_k ) = \sum_{k = 1}^\infty m'(B_k) \le  \sum_{k = 1}^\infty m'(E_k) \]
+
+\noindent The second method starts with the observation that 
+\[ A \cup B = A \cup (B \sim A) \implies m'(A \cup B) = m'(A) + m'(B \sim A) \le m'(A) + m'(B) \]
+
+\noindent A simple inductive argument shows that for and $n$ we have
+\[ m'(\cup_{k = 1}^n E_k) = \sum_{k = 1}^n m'(E_k) \]
+
+\noindent Since $m'(A) \ge 0$ for all $A$ we know that $\sum_{k = 1}^n m'(E_k) \le \sum_{k = 1}^\infty m'(E_k)$ for all $n$. This brings us to the following relationship
+\[ m'(\cup_{k = 1}^n E_k) \le \sum_{k = 1}^\infty m'(E_k) \]
+
+Since the left hand side is independent of $n$ we may let $n$ go to $\infty$ to get the relationship we sought to prove which is
+
+\[ m'(\cup_{k = 1}^\infty E_k) \le \sum_{k = 1}^\infty m'(E_k) \]
+
+The final piece of part $(i)$ is to show the excision property. This is also straight forward, if we note that $A \subset B$ means that $B = A \cup B \sim A$. Since are disjoint we may derive the excision property using finite additivity and assuming that $m'(A) < \infty$:
+\[ m'(B) = m'(A \cup (B \sim A)) = m'(A) + m'(B \sim A) \implies m'(B) - m'(A) = m'(B \sim A) \]
+
+For part (ii) we only need to note that the proof of the continuity of measure only depend on countable additivity, the excision property and the given fact that $m(\emptyset)  = 0$. Since all these properties are either assumed or proved from the given properties of $m'$ the proof of the continuity of measure carries over to $m'$ with out modification.
+
+\begin{flushleft} 
+Problem 28 - Section 2.5, page 47\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Show that continuity of measure together with finite additivity of measure implies countable additivity of measure.
+\\\\ \emph{Proof.}
+	
+We are given a disjoint collection of sets $\{ E_k \}_{k=1}^\infty$, we start by defining $A_k = \cup_{j = 1}^k E_j$ so that \\$A_k \subset A_{k + 1}$ for all $k$. 
+It is clear that $\cup_{k = 1}^\infty A_k = \cup_{k = 1}^\infty \cup_{j = 1}^k E_j = \cup_{j = 1}^\infty E_j$ since $E_j$ is in both $\cup_{k = 1}^\infty \cup_{j = 1}^k E_j$ and  $\cup_{j = 1}^\infty E_j$ for all $j$.
+
+The following calculation completes the result
+\begin{eqnarray*}
+m(\cup_{j = 1}^\infty E_j) = m(\cup_{k =1}^\infty \cup_{j = 1}^k E_j) &=& m(\cup_{k = 1}^\infty A_k) \\
+&=& \lim_{k \to \infty } m(A_k) \quad \text{by continuity of measure} \\
+&=& \lim_{k \to \infty } m(\cup_{j = 1}^k E_j) \\
+&=& \lim_{k \to \infty } \sum_{j = 1}^k m(E_j) \quad \text{by finite additivity} \\
+&=& \sum_{j = 1}^\infty m(E_j) \\
+\end{eqnarray*}
+
+
+\begin{flushleft} 
+Problem 29 - Section 2.6, page 49\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+\noindent (i) Show that rational equivalence defines an equivalence relation on any set.\\
+(ii) Explicitly find a choice set for the rational equivalence relation on any set.\\
+(iii) Define two numbers to irrationally equivalent provided their difference is irrational. Is this an equivalence relation on $\mathbb{R}$? Is this an equivalence relation on $\mathbb{Q}$?
+\\\\ \emph{Proof.}
 
 \end{document}  
-
 
 
