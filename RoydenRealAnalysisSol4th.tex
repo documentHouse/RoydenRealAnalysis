@@ -18,7 +18,7 @@
 
 \title{Real Analysis - H.L. Royden: \\  4th Edition Solutions}
 \author{Andrew Rickert}
-\date{Started: Dec 6, 2011}                                           % Activate to display a given date or no date
+\date{Started: Dec 6, 2012}                                           % Activate to display a given date or no date
 
 \begin{document}
 \maketitle
@@ -603,7 +603,6 @@ m(\cup_{j = 1}^\infty E_j) = m(\cup_{k =1}^\infty \cup_{j = 1}^k E_j) &=& m(\cup
 &=& \sum_{j = 1}^\infty m(E_j) \\
 \end{eqnarray*}
 
-
 \begin{flushleft} 
 Problem 29 - Section 2.6, page 49\\
 \rule{500pt}{1pt}\\
@@ -613,6 +612,26 @@ Problem 29 - Section 2.6, page 49\\
 (ii) Explicitly find a choice set for the rational equivalence relation on any set.\\
 (iii) Define two numbers to irrationally equivalent provided their difference is irrational. Is this an equivalence relation on $\mathbb{R}$? Is this an equivalence relation on $\mathbb{Q}$?
 \\\\ \emph{Proof.}
+
+\noindent For part (i) we need to verify reflexivity, symmetry and transitivity. 
+
+For reflexivity we note that for each $x \in E$ it is true that $x - x = 0 \in \mathbb{Q}$. This shows that the rational equivalence is reflexive. 
+
+\noindent Symmetry goes as follows. If we have $x, y \in E$ and we know that $x - y = q \in \mathbb{Q}$ by assumption then we also know that $y - x = -q \in \mathbb{Q}$ which shows the symmetry of the rational equivalence. 
+
+\noindent Finally for transitivity we suppose that $x, y, z \in E$ and $x - y = r \in \mathbb{Q}$ and $y - z = q \in \mathbb{Q}$. We can add the previous two expression to get $(x - y) + (y - z) = x - z = r + q \in \mathbb{Q}$ which shows the rational equivalence holds for $x$ and $z$ if holds for $x, y$ and $y, z$.
+
+\begin{flushleft} 
+Problem 30 - Section 2.6, page 49\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Show that any choice set for the rational equivalence relation on a set of positive outer measure must be uncountably infinite.
+\\\\ \emph{Proof.}
+
+We assume that the choice set $\mathcal{C}_E$ is countable and derive a contradiction. For each $c_i \in \mathcal{C}_E$ let $B_i = \{ c_i + q \; | \;\text{ where } q \in \mathbb{Q} \}$ and $i \in \mathbb{N}$. Since the rationals are countable the set $B_i$ is countable for each $i \in \mathbb{N}$. Since there are countable number of $c_i \in \mathcal{C}_E$ we have a countable collection countable sets so the union $\cup{i = 1}^\infty B_i$ is countable which also means $m(\cup_{i = 1}^\infty B_i) = 0$. By the second property of choice sets for any $x \in E$ we have $x = c_i + q$ where $c_i, q \in B_i$ so $x \in B_i$. This is to say that $E \subset \cup_{i = 1}^\infty B_i$. By monotonocity we have
+\[ m(E) \le m(\cup_{i =1}^\infty B_i) = 0 \implies m(E) = 0 \]
+This is a contradiction because we started with the assumption that the measure $E$ was positive, this completes the proof.
 
 \end{document}  
 
