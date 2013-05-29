@@ -619,7 +619,11 @@ For reflexivity we note that for each $x \in E$ it is true that $x - x = 0 \in \
 
 \noindent Symmetry goes as follows. If we have $x, y \in E$ and we know that $x - y = q \in \mathbb{Q}$ by assumption then we also know that $y - x = -q \in \mathbb{Q}$ which shows the symmetry of the rational equivalence. 
 
-\noindent Finally for transitivity we suppose that $x, y, z \in E$ and $x - y = r \in \mathbb{Q}$ and $y - z = q \in \mathbb{Q}$. We can add the previous two expression to get $(x - y) + (y - z) = x - z = r + q \in \mathbb{Q}$ which shows the rational equivalence holds for $x$ and $z$ if holds for $x, y$ and $y, z$.
+\noindent Finally for transitivity we suppose that $x, y, z \in E$ and $x - y = r \in \mathbb{Q}$ and $y - z = q \in \mathbb{Q}$. We can add the previous two expression to get $(x - y) + (y - z) = x - z = r + q \in \mathbb{Q}$ which shows the rational equivalence holds for $x$ and $z$ if holds for $x, y$ and $y, z$. 
+
+In part (ii) we need to find a choice set for a given set. An easy but somewhat trivial example starts with the set $S = [0,1] \cap \mathbb{Q}$ the rationals between 0 and 1 inclusive. The choice set will only contain one because from this one point every other point in the set differs by a rational. This is to say that every point in the set $S$ is in the same equivalence relation. We may therefore pick any point in $S$ to represent the choice set so we take $\mathcal{C}_S = \{ \frac{1}{2} \}$
+
+Part (iii) we can show that the irrational equivalence is not a equivalence relation on $\mathbb{R}$ by showing that it must fail to be reflexive. For any value $x \in \mathbb{R}$ we note that $x - x = 0 \in \mathbb{Q}$. So the irrational equivalence fails to be reflexive. This also true for $\mathbb{Q}$ since again if $x \in \mathbb{Q}$ we know that $x - x = 0 \in \mathbb{Q}$ which again shows that irrational equivalence is not an equivalence relation.
 
 \begin{flushleft} 
 Problem 30 - Section 2.6, page 49\\
@@ -632,6 +636,15 @@ Show that any choice set for the rational equivalence relation on a set of posit
 We assume that the choice set $\mathcal{C}_E$ is countable and derive a contradiction. For each $c_i \in \mathcal{C}_E$ let $B_i = \{ c_i + q \; | \;\text{ where } q \in \mathbb{Q} \}$ and $i \in \mathbb{N}$. Since the rationals are countable the set $B_i$ is countable for each $i \in \mathbb{N}$. Since there are countable number of $c_i \in \mathcal{C}_E$ we have a countable collection countable sets so the union $\cup{i = 1}^\infty B_i$ is countable which also means $m(\cup_{i = 1}^\infty B_i) = 0$. By the second property of choice sets for any $x \in E$ we have $x = c_i + q$ where $c_i, q \in B_i$ so $x \in B_i$. This is to say that $E \subset \cup_{i = 1}^\infty B_i$. By monotonocity we have
 \[ m(E) \le m(\cup_{i =1}^\infty B_i) = 0 \implies m(E) = 0 \]
 This is a contradiction because we started with the assumption that the measure $E$ was positive, this completes the proof.
+
+\begin{flushleft} 
+Problem 31 - Section 2.6, page 49\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Justify the assertion in the proof of Vitali's Theorem that it suffices to consider the case that $E$ is bounded.
+\\\\ \emph{Proof.}
+
 
 \end{document}  
 
