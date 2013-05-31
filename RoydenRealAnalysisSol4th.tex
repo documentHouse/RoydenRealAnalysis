@@ -645,6 +645,14 @@ Problem 31 - Section 2.6, page 49\\
 Justify the assertion in the proof of Vitali's Theorem that it suffices to consider the case that $E$ is bounded.
 \\\\ \emph{Proof.}
 
+Let $I_k = [k, k + 1]$ for $k \in \mathbb{Z}$ (the set of all integers, positive, negative and zero) and let $E_k = I_k \cap E$. We must then have 
+\[ E = \cup_{k \in \mathbb{Z}} E_k \]
+
+\noindent Since the $E_k$ are disjoint we may use countable additivity to show
+\[ m(E) = m(\cup_{k \in \mathbb{Z}} E_k) = \sum_{k \in \mathbb{Z}} m(E_k)\]
+
+We have that $m(E) > 0$ from Vitali's theorem. The above expression shows that it is not the case that $m(E_k) = 0$ for all $k \in \mathbb{Z}$ otherwise the above expression gives a contradiction. This shows that at least one $E_k$ has positive measure so even if $E$ is unbounded it has bounded subset of positive measure. The nonmeasureable subset of the bounded set $E_k$ is also a subset of the unbounded set $E$ so we only need to prove the bounded case as is done in the proof of Vitali's set.
+
 
 \end{document}  
 
