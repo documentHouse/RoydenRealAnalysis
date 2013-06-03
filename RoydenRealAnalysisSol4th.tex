@@ -654,6 +654,31 @@ Let $I_k = [k, k + 1]$ for $k \in \mathbb{Z}$ (the set of all integers, positive
 We have that $m(E) > 0$ from Vitali's theorem. The above expression shows that it is not the case that $m(E_k) = 0$ for all $k \in \mathbb{Z}$ otherwise the above expression gives a contradiction. This shows that at least one $E_k$ has positive measure so even if $E$ is unbounded it has bounded subset of positive measure. The nonmeasureable subset of the bounded set $E_k$ is also a subset of the unbounded set $E$ so we only need to prove the bounded case as is done in the proof of Vitali's set.
 
 
+\begin{flushleft} 
+Problem 32 - Section 2.6, page 49\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Does Lemma 16 remain true if $\Lambda$ is allowed to be finite or to be uncountably infinite? Does it remain true if $\Lambda$ is allowed to be unbounded.
+\\\\ \emph{Proof.}
+
+The proof of Lemma 16 depends on $\Lambda$ only so that we can deduce that $ m \left[ \cup_{\lambda \in \Lambda} (\lambda + E) \right]$ is finite. This is clearly still the case if $\Lambda$ is finite where we are assuming as in the proof that $E$ is bounded. Lemma 16 is false if we allow $\Lambda$ to be uncountable even while it remains bounded.
+
+If we allow $E = \{ 0, 1 \}$ and take $\Lambda = [0, 1)$ then for each $\lambda \in [0, 1)$ the set $E_\lambda = \{0 + \lambda, 1 + \lambda \}$ is disjoint from any other set $E_{\lambda'}$ where $\lambda' \in [0, 1)$. These sets satisfy the hypotheses of Lemma 16 except that $\Lambda$ is uncountable. We see that the theorem fails to be true because 
+\[ m \left[ \cup_{\lambda \in \Lambda} (\lambda + E) \right] = m([0, 2)) = 2 \neq 0\]
+
+Lemma 16 also fails if we allow $\Lambda$ to be unbounded. Let $E = [0, \frac{1}{2}]$ and $\Lambda = \{0,1,2,\cdots \}$. The set of translates of $E$ comes out to be $\{ [0,\frac{1}{2}], [1, \frac{3}{2}], [2, \frac{5}{2}], \cdots  \}$ however this gives the following result
+\[  m \left[ \cup_{\lambda \in \Lambda} (\lambda + E) \right]  = m \left[ \bigcup_{k = 0}^\infty [k, k + \frac{1}{2}] \right] =  \sum_{k = 0}^\infty m([k, k + \frac{1}{2}]) = \sum_{k = 0}^\infty \frac{1}{2} = \infty \]
+this shows again that Lemma 16 fails.
+
+\begin{flushleft} 
+Problem 33 - Section 2.6, page 49\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Let $E$ be a non measurable set of finite outer measure. Show that there is a $G_\delta$ set $D$ that contains $E$ for which  \[ m^*(E) = m^*(G), \; \text{while} \; m^*(G \sim E) > 0 \]
+\\\\ \emph{Proof.}
+
 \end{document}  
 
 
