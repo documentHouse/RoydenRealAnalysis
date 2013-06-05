@@ -679,6 +679,20 @@ Problem 33 - Section 2.6, page 49\\
 Let $E$ be a non measurable set of finite outer measure. Show that there is a $G_\delta$ set $D$ that contains $E$ for which  \[ m^*(E) = m^*(G), \; \text{while} \; m^*(G \sim E) > 0 \]
 \\\\ \emph{Proof.}
 
+First we find a set $G \in G_\delta$ that is such that $m^*(E) = m^*(G)$. By the definition of outer measure we know that for each $\frac{1}{j}$ there is collection of intervals $\{ I_{jk} \} _{ k = 1}^\infty$ (which we choose to be open) which cover $E$ and are such that 
+\[ \sum_{k=1}^\infty \ell(I_{jk}) \le m^*(E) + \frac{1}{j} \]
+
+\noindent If we let $G_j = \cup_{k = 1}^\infty I_{jk}$ then $E \subset G_j$ and we have 
+\[ 0 \le m^*(G_j) \le \sum_{k=1}^\infty \ell(I_{jk}) \le m^*(E) + \frac{1}{j} \implies 0 \le m^*(G_j) - m^*(E) \le \frac{1}{j} \]
+
+\noindent We now let $G = \cap_{k = 1}^\infty G_k$, from the above expression we get that $m^*(G) = m^*(E)$. Since $E \subset G_j$ for all $j$ we also have that $E \subset G$.
+
+To complete the proof we note that $E \subset G$ implies that $G = (G \sim E) \cup E$. By the countable subadditivity of outer measure we get 
+\[ m^*(G) \le m^*(G \sim E) + m^*(E) \implies m^*(G) - m^*(E) \le m^*(G \sim E) \; \text{since $m^*(E)$ is finite} \]
+\noindent So
+\[ 0 \le m^*(G \sim E) \; \text{since} \; m^*(G) = m^*(E) \]
+There are two possibilities, either $0 = m^*(G \sim E)$ or $0 < m^*(G \sim E)$. If we have $0 = m^*(G \sim E)$ then Theorem 11 part $(ii)$ implies that $E$ is measurable which contradicts the hypothesis that it is not. This only leaves the second possibility that $0 < m^*(G \sim E)$, this completes the proof.
+
 \end{document}  
 
 
