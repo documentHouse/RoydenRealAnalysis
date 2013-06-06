@@ -693,6 +693,27 @@ To complete the proof we note that $E \subset G$ implies that $G = (G \sim E) \c
 \[ 0 \le m^*(G \sim E) \; \text{since} \; m^*(G) = m^*(E) \]
 There are two possibilities, either $0 = m^*(G \sim E)$ or $0 < m^*(G \sim E)$. If we have $0 = m^*(G \sim E)$ then Theorem 11 part $(ii)$ implies that $E$ is measurable which contradicts the hypothesis that it is not. This only leaves the second possibility that $0 < m^*(G \sim E)$, this completes the proof.
 
+
+\begin{flushleft} 
+Problem 34 - Section 2.7, page 53\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Show that there is a continuous, strictly increasing function on the interval $[0,1]$ that maps a set of positive measure onto a set of measure zero.
+\\\\ \emph{Proof.}
+
+The strictly increasing function $\psi$ defined to be $\psi(x) = \phi(x) + x$, with $\phi$ being the Cantor-Lebesgue function, maps the Cantor set $C$ onto a subset of $[0,2]$. This subset $A \subset [0,2]$ has a positive measure. Since the inverse of strictly increasing function is strictly increasing we get the function $\psi^{-1}: A \subset [0,2] \to C$ which maps a set of positive measure $A$ to $C$ which has measure zero.
+
+Let $f$ be the function $f = 2 x$. The domain of $f$ will be $f^{-1}(A) \subset [0,1]$ where $f^{-1}$ exists since $f$ is strictly increasing over any domain. Since the composition of strictly increasing functions is strictly increasing then the function $\psi^{-1} \circ f : f^{-1}(A) \to C$ is strictly increasing and maps the set $f^{-1}(A) \subset [0,1]$ which has positive measure to $C$ which is measure zero.
+
+\begin{flushleft} 
+Problem 35 - Section 2.7, page 53\\
+\rule{500pt}{1pt}\\
+\end{flushleft} 
+
+Let $f$ be an increasing function on the open interval $I$. For $x_0 \in I$ show that $f$ is continuous at $x_0$ if and only if there are sequences $\{ a_n \}$ and $\{ b_n \}$ in $I$ such that for each $n, a_n < x_0 < b_n$,  and $\lim_{n \to \infty} [f(b_n) - f(a_n)] = 0$.
+\\\\ \emph{Proof.}
+
 \end{document}  
 
 
