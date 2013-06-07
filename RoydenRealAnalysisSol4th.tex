@@ -714,6 +714,20 @@ Problem 35 - Section 2.7, page 53\\
 Let $f$ be an increasing function on the open interval $I$. For $x_0 \in I$ show that $f$ is continuous at $x_0$ if and only if there are sequences $\{ a_n \}$ and $\{ b_n \}$ in $I$ such that for each $n, a_n < x_0 < b_n$,  and $\lim_{n \to \infty} [f(b_n) - f(a_n)] = 0$.
 \\\\ \emph{Proof.}
 
+Proving the $if$ direction first, we assume that $f$ is continuous. Because $x_0 \in I$ and $I$ is open there exists an $N$ such that for $j > N$ we have $x_0 - \frac{1}{j} \in I$. Similarly there is also a $N'$ such that for $j > N'$ we have $x_0 + \frac{1}{j} \in I$. Now let $M = $ Max $\{N, N'\}$ and we define 
+\begin{eqnarray*}
+\{ a_n \}_{n = 1}^\infty = \{ x_0 - \frac{1}{M+1}, x_0 - \frac{1}{M+2}, x_0 - \frac{1}{M+3}, \cdots \} \\  
+\{ b_n \}_{n = 1}^\infty = \{ x_0 + \frac{1}{M+1}, x_0 + \frac{1}{M+2}, x_0 + \frac{1}{M+3}, \cdots \}
+\end{eqnarray*}
+
+\noindent From these definitions it is clear that $a_n$ and $b_n$ are sequences in $I$ such that $a_n < x_0 < b_n$ for all $n$. By the continuity of $f$ we know that since $\lim_{n \to \infty} a_n = x_0$ that $\lim_{n \to \infty} f(a_n) = f(x_0)$ and similarly for $b_n$ that $\lim_{n \to \infty} b_n = x_0$ implies $\lim_{n \to \infty} f(b_n) = f(x_0)$. Together these expressions say $\lim_{n \to \infty} f(a_n) - f(x_0) = 0$ and $\lim_{n \to \infty} f(b_n) - f(x_0) = 0$ which allows us to complete the first part of the proof by calculating
+\begin{eqnarray*}
+\lim_{n \to \infty} f(b_n) - f(a_n) &=& \lim_{n \to \infty} (f(b_n) - f(x_0) + f(x_0) - f(a_n)) \\
+&=& \lim_{n \to \infty} (f(b_n) - f(x_0)) +   \lim_{n \to \infty} (f(x_0) - f(a_n)) \\
+&=& 0 + 0 = 0
+\end{eqnarray*}
+
+
 \end{document}  
 
 
