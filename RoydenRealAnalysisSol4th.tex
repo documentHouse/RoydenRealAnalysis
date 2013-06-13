@@ -727,6 +727,33 @@ Proving the $if$ direction first, we assume that $f$ is continuous. Because $x_0
 &=& 0 + 0 = 0
 \end{eqnarray*}
 
+We now prove the 'only if' direction which is to say that we assume there exists sequences $\{a_n\}$ and $\{ b_n \}$ where $a_n < x_0 < b_n$ for all $n$ and $\lim_{n \to \infty} [f(b_n) - f(a_n)] = 0$. To prove continuity we would like to show that for any sequence $\{ x_n \}$ such that $\lim_{n \to \infty} x_n = x_0$ we have $\lim_{n \to \infty} f(x_n) = f(x_0)$.
+
+For every $n$ there exists a $M$ which depends on $n$ such that for all $m > M$ we have 
+
+\[ a_n < x_m < b_n \quad \text{for $m > M$} \]
+
+We note that since $m \to \infty$ as $n \to \infty$ we can replace $\lim_{m \to \infty}$ with $\lim_{n \to \infty}$ and generally rename $m$ to $n$ in limits since it will then be acting as a dummy variable.
+\noindent We may then perform the following calculation
+\begin{eqnarray*}
+a_n < x_m < b_n  &\implies& f(a_n) < f( x_m) < f(b_n) \quad \text{since $f$ is increasing} \\
+&\implies&   \lim_{n \to \infty} f(a_n) \le  \lim_{n \to \infty} f( x_m) \le  \lim_{n \to \infty} f(b_n)  \\
+&\implies&   \lim_{n \to \infty} f(a_n) \le  \lim_{n \to \infty} f( x_n) \le  \lim_{n \to \infty} f(b_n)  \quad \text{by renaming dummy variables in limits} \\
+&\implies&  0 \le  \lim_{n \to \infty} f( x_n) - f(a_n) \le  \lim_{n \to \infty} f(b_n) - f(a_n) \\ 
+&\implies&  0 \le  \lim_{n \to \infty} f( x_n) - f(a_n) \le  0 \implies \lim_{n \to \infty} f( x_n) - f(a_n) = 0 \implies \lim_{n \to \infty} f( x_n) = \lim_{n \to \infty} f(a_n)  \\ 
+\end{eqnarray*}
+
+\noindent We may perform the same calculation with the original expression $a_n < x_0 < b_n $ to get 
+\begin{eqnarray*}
+a_n < x_0 < b_n  &\implies& f(a_n) < f( x_0) < f(b_n) \quad \text{since $f$ is increasing} \\
+&\implies&   \lim_{n \to \infty} f(a_n) \le  \lim_{n \to \infty} f( x_0) \le  \lim_{n \to \infty} f(b_n)  \\
+&\implies&  0 \le  \lim_{n \to \infty} f( x_0) - f(a_n) \le  \lim_{n \to \infty} f(b_n) - f(a_n) \\ 
+&\implies&  0 \le  \lim_{n \to \infty} f( x_0) - f(a_n) \le  0 \implies \lim_{n \to \infty} f( x_0) - f(a_n) = 0 \implies \lim_{n \to \infty} f( x_0) = \lim_{n \to \infty} f(a_n)  \\ 
+\end{eqnarray*}
+
+\noindent This allows us to complete the proof since we have shown
+\[ \lim_{n \to \infty} f( x_n) =  \lim_{n \to \infty} f(a_n)  = \lim_{n \to \infty} f( x_0) \]
+
 
 \end{document}  
 
